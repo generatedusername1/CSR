@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "BOSS Quick-Linker",
+  "version": "1.2",
+  "description": "Auto-link Order Numbers and Profile IDs to BOSS portal.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BOSS Quick-Linker Settings"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "exclude_matches": [
+        "*://boss.amway.eu/*",
+        "*://vas.brt.it/*",
+        "*://amway.zendesk.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}
