@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BOSS Linker Test Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .test-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BOSS Quick-Linker Verification</h1>
+    <p>Open the extension popup to toggle between Italy and Sweden.</p>
+    <p><strong>Shortcuts:</strong> Alt+Click (Zendesk), Shift+Click (Force Sweden).</p>
+
+    <div class="test-block">
+        <h3>Order Numbers</h3>
+        <p>Italian Order: <strong>171234567</strong> (Always IT)</p>
+        <p>Swedish Order: <strong>371234567</strong> (Always SE)</p>
+    </div>
+
+    <div class="test-block">
+        <h3>Profile IDs</h3>
+        <p>7-digit ID: <strong>1234567</strong> (Follows Toggle / Shift)</p>
+        <p>10-digit ID: <strong>9876543210</strong> (Follows Toggle / Shift)</p>
+    </div>
+
+    <div class="test-block">
+        <h3>Email Addresses</h3>
+        <p>Standard: <strong>test.user@gmail.com</strong> (Follows Toggle / Shift)</p>
+        <p>Amway Email: <strong>support@amway.com</strong></p>
+        <p>Mixed Text: Contact <strong>john.doe123@example.org</strong> for details.</p>
+        <p><strong>Edge Case Check:</strong> 1234567@gmail.com (Should link whole email, not split)</p>
+    </div>
+
+    <div class="test-block">
+        <h3>Dynamic Content Test</h3>
+        <button id="add-content">Add New Content</button>
+        <div id="dynamic-area"></div>
+    </div>
+
+    <script>
+        document.getElementById('add-content').addEventListener('click', () => {
+            const p = document.createElement('p');
+            p.innerHTML = "New dynamic email: dynamic.user@test.com";
+            document.getElementById('dynamic-area').appendChild(p);
+        });
+    </script>
+</body>
+
+</html>
