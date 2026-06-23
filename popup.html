@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOSS Linker Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>BOSS Mode</h2>
+
+    <div class="toggle-container">
+      <span class="country-label" id="label-it">🇮🇹 Italy</span>
+      <label class="switch">
+        <input type="checkbox" id="country-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="country-label" id="label-se">🇸🇪 Sweden</span>
+    </div>
+
+    <p class="status">Active Mode: <span id="active-mode">IT</span></p>
+
+    <div class="info">
+      <p><strong>Order #s rely on prefix:</strong></p>
+      <p>17... &rarr; Italy <br> 37... &rarr; Sweden</p>
+      <hr>
+      <p><strong>Shortcuts (Click + Key):</strong></p>
+      <p><strong>Alt</strong> &rarr; Zendesk Search</p>
+      <p><strong>Shift</strong> &rarr; Force Sweden Mode</p>
+      <p><strong>Shift + CapsLock</strong> &rarr; SE Order Hist.</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
